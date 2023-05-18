@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 import usuarioService from '../../services/usuario';
+import logo from '../../images/logo-dark.png';
 
 function Login(){
 
@@ -31,7 +33,7 @@ function Login(){
         <section class="area-login">
             <div class="login">
             <div>
-                <img src="../../images/logo-dark.png" alt="logo"/>
+                <img src={logo} alt="logo"/>
             </div>
 
             <form onSubmit={handleSubmit}>
@@ -40,7 +42,7 @@ function Login(){
                 {erro && <p className="erro">Email ou senha inválidos!</p>}
                 <input type="submit" name="entrar" value="entrar"/>
             </form>
-            <p>Ainda não tem uma conta?<a href="../cadastro/cadastro.html">Criar conta</a></p>
+            <p>Ainda não tem uma conta?<Link to="/cadastro">Criar conta</Link></p>
         </div>
         </section>
     )
